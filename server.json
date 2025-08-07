@@ -2,19 +2,19 @@
     "fotos": [
         {
             "id": 1,
-            "imagem": "./img/foto-cintia.jpeg",
+            "imagem": "https://lh3.googleusercontent.com/pw/AP1GczNz-vqyG0E67b8xCF09bjYT7v4xDlBm74l7X5GjgQnf0Vh-xMgWw_vR3y9b3HV_O9t5NJMatexAr0LYrMhkJ7xEy46XVQIfd2BCjtVbjkqfM151VMUbb46FMjXV0r0RoPiKJCEqsPMgi31pXgwQlbI=w1200-h1600-s-no?authuser=0",
             "legenda": "Com a Cíntia!",
             "data": "31/07/2025"
         },
         {
             "id": 2,
-            "imagem": "https://drive.google.com/file/d/15tUxIr1L9SQeoCebsvSor-Ab0O9ivKai/view?usp=sharing",
+            "imagem": "https://lh3.googleusercontent.com/pw/AP1GczOXT8fT-ddWdvJA94fS4Q2I5KSwWZjBYo5_IienWMiE7b2l7kT7HUFA3XuXtfg4bRdN5PYkviJ9acN4Td_kvR8oscwI5yZKRYbCzB98iTWxRO6Vx55XjbtMbfNCXykZlWdp7wnMrGz1UVcdTiZg7kY=w1200-h1600-s-no?authuser=0",
             "legenda": "Puffs da Biblioteca",
             "data": "31/07/2025"
         },
         {
             "id": 3,
-            "imagem": "https://drive.google.com/file/d/1yH1SAdDzeHnxUUYzSM5q1cK12F9hMM5I/view?usp=sharing",
+            "imagem": "https://lh3.googleusercontent.com/pw/AP1GczMQV0Q9M9IfAw5Z6RE0jOOwfPjyC0r7i-Jv9L3qN41cYXrolzDp-i-yyyGzsXbJ1FhGqBOj93WoUgxou92CvRuM8nuZENbgDJ9If8f8G5SIMRq_fj1C91L2N-pJWImqEpOSA7tfpi6WeE5wAolUQhg=w1200-h1600-s-no?authuser=0",
             "legenda": "Banco da Quadra",
             "data": "31/07/2025"
         }

@@ -1,78 +1,81 @@
 'use strict'
 
-const BASE_URL= 'http://localhost:3000'
+const BASE_URL = 'http://localhost:3000'
+const fotosContainer = document.querySelector('.slider-container')
+let currentIndex = 0
 
-// função crud 
-async function getFotos(){
-    const response = await fetch(`${BASE_URL}/fotos`)
-    const data = await response.json()
-    return data
-}
-
-//funcao teste
-async function buscarFotos(){
+// Função para buscar fotos da API
+async function getFotos() {
     try {
         const response = await fetch(`${BASE_URL}/fotos`)
         if (!response.ok) {
-            throw new Error('Erro ao buscar fotos');
+            throw new Error('Erro ao buscar fotos')
         }
         const data = await response.json()
-
-        return data.fotos || []
-
+        return data || []
     } catch (error) {
+        console.error('Erro:', error)
         return []
     }
 }
 
-async function carregarFotos() {
-    fotosContainer.appendChild()
-    let fotos = await buscarFotos()
-
-    //buscar midias relacinadas
-    for(const foto of fotos){
-        try {
-            fotos.imagem= await buscarFotos(foto.id)
-        } catch (error) {
-            fotos.imagem = []
-        }
-    }
-}
-
-// funxao para criar o card da imagem
-const fotosContainer = document.getElementById('gallery')
+// Função para criar o card da imagem
 function criarCard(foto) {
     const card = document.createElement('div')
     card.classList.add('card')
 
     const img = document.createElement('img')
     img.src = foto.imagem
-    img.alt = foto.titulo
+    img.alt = foto.titulo || 'Imagem'
 
     const legenda = document.createElement('p')
-    legenda.textContent = foto.legenda
+    legenda.textContent = foto.legenda || 'Sem legenda'
 
     const data = document.createElement('p')
-    data.textContent = foto.data
+    data.textContent = foto.data || 'Data não disponível'
 
     card.appendChild(img)
     card.appendChild(legenda)
     card.appendChild(data)
 
-    fotosContainer.appendChild(card)
+    return card
 }
 
-// função para carregar as fotos
-async function carregarGaleria() {
+// Função para carregar as fotos e criar os cards
+async function carregarFotos() {
     const fotos = await getFotos()
-    fotos.forEach(criarCard)
+    if (fotos.length === 0) {
+        console.error('Nenhuma foto encontrada.')
+        return
+    }
+
+    fotos.forEach(foto => {
+        const card = criarCard(foto)
+        fotosContainer.appendChild(card)
+    })
+
+    updateSlide() 
 }
 
-// Chama a função para carregar as fotos ao carregar a página
-window.addEventListener('load', carregarGaleria)
-// const fotos = await getFotos()
+// Função para atualizar o slide
+function updateSlide() {
+    const slideWidth = document.querySelector('.slider').offsetWidth
+    fotosContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`
+}
 
+// Função para ir ao slide anterior
+function prevSlide() {
+    const totalSlides = document.querySelectorAll('.card').length
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides
+    updateSlide()
+}
 
-// fotos.forEach(criarCard)
+// Função para ir ao próximo slide
+function nextSlide() {
+    const totalSlides = document.querySelectorAll('.card').length
+    currentIndex = (currentIndex + 1) % totalSlides
+    updateSlide()
+}
 
-
+// Carregar as fotos ao carregar a página
+carregarFotos()
