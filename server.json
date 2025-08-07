@@ -1,0 +1,22 @@
+{
+    "fotos": [
+        {
+            "id": 1,
+            "imagem": "./img/foto-cintia.jpeg",
+            "legenda": "Com a Cíntia!",
+            "data": "31/07/2025"
+        },
+        {
+            "id": 2,
+            "imagem": "https://drive.google.com/file/d/15tUxIr1L9SQeoCebsvSor-Ab0O9ivKai/view?usp=sharing",
+            "legenda": "Puffs da Biblioteca",
+            "data": "31/07/2025"
+        },
+        {
+            "id": 3,
+            "imagem": "https://drive.google.com/file/d/1yH1SAdDzeHnxUUYzSM5q1cK12F9hMM5I/view?usp=sharing",
+            "legenda": "Banco da Quadra",
+            "data": "31/07/2025"
+        }
+    ]
+}
